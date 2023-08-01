@@ -42,18 +42,18 @@ export const Table = () => {
             {datas.map((data) => (
               <tr
                 className="bg-transparent border border-indigo-600 hover:bg-gray-100"
-                key={data.name}
+                key={datas.indexOf(data) + 1}
               >
                 <th
                   scope="row"
                   className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
                 >
-                  {datas.indexOf(data)}
+                  {datas.indexOf(data) + 1}
                 </th>
                 <td className="px-6 py-4 text-indigo-600">{data.name}</td>
                 <td className="px-6 py-4">
                   <a
-                    href="#"
+                    href={"/detail/pokemon/" + (datas.indexOf(data) + 1)}
                     className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
                   >
                     {data.url}
